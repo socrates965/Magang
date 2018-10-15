@@ -31,7 +31,9 @@ Partial Class Form1
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.IsMdiContainer = True
+        Me.MinimumSize = New System.Drawing.Size(388, 260)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Program"
         Me.ResumeLayout(False)
 

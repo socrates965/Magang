@@ -5,9 +5,11 @@ Module Connection
     Public dr As OleDbDataReader
     Public cmd As OleDbCommand
 
+    Public da As OleDbDataAdapter
+    Public ds As DataSet
+
     Public Sub Connect()
-        Dim acdb As String
-        acdb = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database.mdb;"
+        Static Dim acdb As String = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Database.mdb;"
         cn = New OleDbConnection(acdb)
         If cn.State = ConnectionState.Closed Then
             cn.Open()
@@ -15,6 +17,10 @@ Module Connection
 
     End Sub
 
-
+    Public Sub Logout()
+        Form1.session = False
+        Form.ActiveForm.ActiveMdiChild.Close()
+        Form2.Show()
+    End Sub
 
 End Module
